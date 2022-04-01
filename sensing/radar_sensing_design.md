@@ -6,15 +6,15 @@
 This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/master/sensing/figure/radar_sensing.drawio.svg>
 
 ## Node
-### proprocess node
+### preprocess node
 
-Radar proprocess use `RadarScan` as message type.
+Radar preprocess use `RadarScan` as message type.
 As first prototype of radar preprocess, I suggest
 
 - Radar threshold filter
   - This package remove noise (low intensity and edge angle of sensors) from radar points.
 - Radar static points filter
-  - This package extract static/dynamic radar point using for dynamic object detection.
+  - This package extract static/dynamic radar point using for object recognition.
 
 ### RadarScan to Pointcloud2
 
@@ -28,4 +28,4 @@ To use effectively for LiDAR package, I suggest `RadarScanPointcloud2Convertor`,
 
 For considered use case,
 - Use [crop box filter](https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/pointcloud_preprocessor) for radar scan
-- Apply low level obstacle detection like [ground segmentation](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/ground_segmentation) to radar points for LiDAR-less (cameras + radars) system
+- Apply obstacle segmentation like [ground segmentation](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/ground_segmentation) to radar points for LiDAR-less (cameras + radars) system

@@ -10,7 +10,7 @@ As another idea,
 
 are considered.
 Compared with theses, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardization in raw data of radar as discussed in [PR #1](https://github.com/ros-perception/radar_msgs/pull/1).
-I think following ROS standard is better architecture for OSS.
+I think following ROS standard is better architecture for open source softwares.
 
 ## survey
 
