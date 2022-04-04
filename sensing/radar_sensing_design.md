@@ -1,9 +1,9 @@
 
 ## Pipeline
 
-![Radar sensing pipeline](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/radar_sensing.drawio.svg)
+![Radar sensing pipeline](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/sensing/figure/radar_sensing.drawio.svg)
 
-This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/master/sensing/figure/radar_sensing.drawio.svg>
+This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/radar_sensing.drawio.svg>.
 
 ## Node
 ### preprocess node

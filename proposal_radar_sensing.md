@@ -19,7 +19,7 @@ The proposal pipeline follow [Sensing and perception architecture proposal](http
 
 ![The pipeline figure for design document](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/sensing_pipeline.drawio.svg)
 
-This figures put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/master/sensing/figure/sensing_pipeline.drawio.svg>.
+This figures put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/sensing_pipeline.drawio.svg>.
 
 ### Radar driver
 
@@ -30,7 +30,7 @@ For now, I suggest Autoware should support `ros-perception/radar_msgs/msg/RadarS
 
 ![draw.io figure](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/radar_driver.drawio.svg)
 
-This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/master/sensing/figure/radar_driver.drawio.svg>.
+This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/radar_driver.drawio.svg>.
 
 ### Radar sensing pipeline
 
@@ -41,9 +41,9 @@ To sum up, I suggest
 
 In detail, please see [radar sensing design](https://github.com/scepter914/autoware-radar-architecture-proposal/sensing/radar_sensing_design.md).
 
-![Radar sensing pipeline](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/radar_sensing.drawio.svg)
+![Radar sensing pipeline](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/sensing/figure/radar_sensing.drawio.svg)
 
-This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/master/sensing/figure/radar_sensing.drawio.svg>
+This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/radar_sensing.drawio.svg>.
 
 ## Discussion list
 
