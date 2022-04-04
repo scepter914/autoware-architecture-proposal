@@ -13,6 +13,7 @@ According to radar output types, I suggest two sensor fusion types in perception
 - Radar fusion in `RadarScan` layer in detection module
 
 ## Radar fusion in object layer in tracking module
+
 ### Fusion tracking
 
 In fusion tracking, radar tracked objects are fused for other tracked objects in tracking module.

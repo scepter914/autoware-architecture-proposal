@@ -4,6 +4,7 @@
 I suggest that Autoware adopt `autoware_auto_perception_msgs/msg/TrackedObject` as radar object message because `autoware_auto_perception_msgs/msg/TrackedObject` have richer information than other message types.
 
 ## survey for message
+
 ### radar_msgs/msg/RadarTrack.msg
 
 - [radar_msgs/msg/RadarTrack.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarTrack.msg)
