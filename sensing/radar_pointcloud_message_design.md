@@ -1,7 +1,7 @@
 
 ## Summary
 
-`ros-perception/radar_msgs/msg/RadarScan.msg` aim to standardization in raw data of radar, so I suggest that Autoware adopt `ros-perception/radar_msgs/msg/RadarScan.msg`.
+`ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardization in raw data of radar, so I suggest that Autoware adopt `ros-perception/radar_msgs/msg/RadarScan.msg`.
 
 As another idea,
 

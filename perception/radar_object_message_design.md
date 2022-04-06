@@ -1,11 +1,14 @@
 
 ## Summary
 
-I suggest that Autoware adopt `autoware_auto_perception_msgs/msg/TrackedObject` as radar object message because `autoware_auto_perception_msgs/msg/TrackedObject` have richer information than other message types.
+`ros-perception/radar_msgs/msg/RadarTrack.msg` aims to standardization in tracked objects data from radar, so I suggest that Autoware adopt `ros-perception/radar_msgs/msg/RadarTrack.msg` as radar object message from radar drivers.
+
+As another idea, `autoware_auto_perception_msgs/msg/TrackedObject` is considered.
+However, radar drivers are desirable not to depend original message of Autoware for open source software.
 
 ## survey for message
 
-### radar_msgs/msg/RadarTrack.msg
+### ros-perception/radar_msgs/msg/RadarTrack.msg
 
 - [radar_msgs/msg/RadarTrack.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarTrack.msg)
 
@@ -29,7 +32,7 @@ float32[6] acceleration_covariance          # Upper-triangle covariance about th
 float32[6] size_covariance                  # Upper-triangle covariance about the x, y, z axes
 ```
 
-### Autoware
+### autoware_auto_perception_msgs/msg/TrackedObject
 
 - [autoware_auto_perception_msgs/msg/TrackedObject](https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_perception_msgs/msg/TrackedObject.idl) can be expanded as below.
 
