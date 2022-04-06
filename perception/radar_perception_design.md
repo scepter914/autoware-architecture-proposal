@@ -24,7 +24,10 @@ As discussed in [Perception architecture discussion](https://github.com/autoware
 - Camera tracked 3d objects
 - Radar tracked 3d objects
 
-### Radar tracked objects
+### Radar detection and tracking
+
+![The pipeline figure for design document](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/perception/figure/radar_detection_tracking.drawio.svg)
+
 
 The tracked radar objects have the following features and can use for fusion tracking.
 
