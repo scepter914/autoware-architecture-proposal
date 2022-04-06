@@ -11,7 +11,7 @@ To sum up, I suggest
 - [ros-perception/radar_msgs/msg/RadarScan.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarScan.msg) and [ros-perception/radar_msgs/msg/RadarReturn.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarReturn.msg) for radar pointcloud.
 - [autoware_auto_perception_msgs/msg/TrackedObjects](https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_perception_msgs/msg/TrackedObjects.idl) for radar object.
 
-In detail, please see [radar pointcloud message design](https://github.com/scepter914/autoware-radar-architecture-proposal/sensing/radar_pointcloud_message_design.md) and [radar object message design](https://github.com/scepter914/autoware-radar-architecture-proposal/sensing/radar_object_message_design.md).
+In detail, please see [radar pointcloud message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/radar_pointcloud_message_design.md) and [radar object message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_object_message_design.md).
 
 ### Whole pipeline
 
@@ -29,7 +29,7 @@ For now, I suggest Autoware should support `ros-perception/radar_msgs/msg/RadarS
 
 This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/radar_driver.drawio.svg>.
 
-In detail, please see [radar driver design](https://github.com/scepter914/autoware-radar-architecture-proposal/sensing/radar_driver_design.md).
+In detail, please see [radar driver design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/radar_driver_design.md).
 
 ### Radar sensing pipeline
 

@@ -14,7 +14,7 @@ According to the output types, I suggest two sensor fusion types as radar output
 
 This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/figure/perception_pipeline.drawio.svg>
 
-In detail, please see [radar perception design](https://github.com/scepter914/autoware-radar-architecture-proposal/perception/radar_perception_design.md).
+In detail, please see [radar perception design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_perception_design.md).
 
 ## Discussion
 
