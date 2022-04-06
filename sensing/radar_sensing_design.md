@@ -1,5 +1,7 @@
+## Whole Pipeline
 
-## Pipeline
+Radar sensing package process `RadarScan` topics.
+For `RadarTrack` topics, please see [perception architecture design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_perception_design.md).
 
 ![Radar sensing pipeline](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/sensing/figure/radar_sensing.drawio.svg)
 
