@@ -8,7 +8,7 @@ I would like make another discussion for perception architecture with radar.
 
 To sum up, I suggest
 
-- [ros-perception/radar_msgs/msg/RadarScan.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarScan.msg) and [ros-perception/radar_msgs/msg/RadarReturn.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarReturn.msg) for radar pointcloud.
+- [ros-perception/radar_msgs/msg/RadarScan.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarScan.msg) for radar pointcloud.
 - [autoware_auto_perception_msgs/msg/TrackedObjects](https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_perception_msgs/msg/TrackedObjects.idl) for radar object.
 
 In detail, please see [radar pointcloud message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/radar_pointcloud_message_design.md) and [radar object message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_object_message_design.md).
@@ -35,8 +35,8 @@ In detail, please see [radar driver design](https://github.com/scepter914/autowa
 
 To sum up, I suggest
 
-- In sensing layer, radar preprocess package filters noise using `RadarScan` message type.
-- To use effectively for LiDAR package, I would like to propose convertor from `RadarScan` to `sensor_msgs/msg/Pointcloud2.msg`.
+- In sensing layer, radar preprocess package filters noise through `ros-perception/radar_msgs/msg/RadarScan.msg` message type.
+- To use effectively for LiDAR package, I would like to propose convertor from `ros-perception/radar_msgs/msg/RadarScan.msg` to `sensor_msgs/msg/Pointcloud2.msg`.
 
 In detail, please see [radar sensing design](https://github.com/scepter914/autoware-radar-architecture-proposal/sensing/radar_sensing_design.md).
 
