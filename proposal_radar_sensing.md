@@ -17,7 +17,7 @@ In detail, please see [radar pointcloud message design](https://github.com/scept
 
 The proposal pipeline follow [Sensing and perception architecture proposal](https://github.com/autowarefoundation/autoware/discussions/3).
 
-![The pipeline figure for design document](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/sensing_pipeline.drawio.svg)
+![The pipeline figure for design document](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/sensing/figure/sensing_pipeline.drawio.svg)
 
 This figures put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/sensing_pipeline.drawio.svg>.
 
@@ -25,7 +25,7 @@ This figures put on <https://github.com/scepter914/autoware-radar-architecture-p
 
 For now, I suggest Autoware should support `ros-perception/radar_msgs/msg/RadarScan.msg` and `autoware_auto_perception_msgs/msg/TrackedObjects` for radar driver because these two outputs are more useful for sensor fusion in sensing and perception module than others.
 
-![draw.io figure](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/8d5c15628518173570d3dc16fc8347b1c2346747/sensing/figure/radar_driver.drawio.svg)
+![draw.io figure](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/sensing/figure/radar_driver.drawio.svg)
 
 This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/figure/radar_driver.drawio.svg>.
 
