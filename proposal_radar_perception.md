@@ -1,24 +1,24 @@
 ## Summary
 
 I would like to initiate the discussion for perception architecture with radars for Autoware.
-This proposal follow [Perception architecture discussion](https://github.com/autowarefoundation/autoware/discussions/3).
-As said in radar sensing proposal, radar output divide two types; scan and objects.
-According to the output types, I suggest two sensor fusion types as radar output.
+This proposal follows the [Perception architecture discussion](https://github.com/autowarefoundation/autoware/discussions/3).
+As described in the radar sensing proposal, radar output can be divided into two types; scan and objects.
+According to these output types, I suggest two sensor fusion types for radar output:
 
-- The radar fusion in object layer in tracking module
-- The radar fusion in `RadarScan` layer in detection module
+- Radar fusion in the object layer in the tracking module
+- Radar fusion in the `RadarScan` layer in the detection module
 
 ### Perception pipeline with radar
 
 ![The pipeline figure for design document](https://raw.githubusercontent.com/scepter914/autoware-radar-architecture-proposal/main/perception/figure/perception_pipeline.drawio.svg)
 
-This figure put on <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/figure/perception_pipeline.drawio.svg>
+This figure can be found at <https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/figure/perception_pipeline.drawio.svg>
 
-In detail, please see [radar perception design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_perception_design.md).
+For more detail, please see [radar perception design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_perception_design.md).
 
 ## Discussion
 
 - [ ] Radar perception pipeline
 - [ ] Document location
-  - I see [autoware-documentation](https://github.com/autowarefoundation/autoware-documentation/), but I do not grasp where to put the architecture design document.
-  - After discussions and if maintainers instruct where to put the document, then I'll send PR for it.
+  - I see [autoware-documentation](https://github.com/autowarefoundation/autoware-documentation/), but it is not clear where to put the architecture design document.
+  - After discussions and if maintainers can instruct where to put the document, I will send a PR for it.
