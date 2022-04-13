@@ -1,21 +1,21 @@
 
 ## Summary
 
-`ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardization in raw data of radar, so I suggest that Autoware adopt `ros-perception/radar_msgs/msg/RadarScan.msg`.
+`ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarScan.msg`.
 
-As another idea,
+In addition, the following ideas:
 
 - Make Autoware original message for radar pointclouds
 - `sensor_msgs/msg/Pointcloud2.msg`
 
 are considered.
-Compared with theses, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardization in raw data of radar as discussed in [PR #1](https://github.com/ros-perception/radar_msgs/pull/1).
-I think following ROS standard is better architecture for open source softwares.
+Compared with these, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format as discussed in [PR #1](https://github.com/ros-perception/radar_msgs/pull/1).
+I think following the ROS standard is better a architecture for open source software.
 
-## survey
+## Survey
 
-Although there are many kinds of outputs, radar mainly adopt two types as outputs, pountcloud and objects.
-Related discussion in ros-perception are [PR #1](https://github.com/ros-perception/radar_msgs/pull/1), [PR #2](https://github.com/ros-perception/radar_msgs/pull/2), and [PR #3](https://github.com/ros-perception/radar_msgs/pull/3) and existing open source softwares for radar are summarized in these PR.
+Although there are many kinds of outputs, radar mainly adopt two types as outputs; pointcloud, and objects.
+Related discussions in ros-perception are [PR #1](https://github.com/ros-perception/radar_msgs/pull/1), [PR #2](https://github.com/ros-perception/radar_msgs/pull/2), and [PR #3](https://github.com/ros-perception/radar_msgs/pull/3). Existing open source software for radar are summarized in these PR.
 
 ### ros-perception/radar_msgs/msg/RadarScan.msg
 

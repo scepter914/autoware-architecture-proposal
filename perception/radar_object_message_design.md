@@ -1,12 +1,12 @@
 
 ## Summary
 
-`ros-perception/radar_msgs/msg/RadarTrack.msg` aims to standardization in tracked objects data from radar, so I suggest that Autoware adopt `ros-perception/radar_msgs/msg/RadarTrack.msg` as radar object message from radar drivers.
+`ros-perception/radar_msgs/msg/RadarTrack.msg` aims to standardize the tracked object data from radar, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarTrack.msg` as the radar object message type output by radar drivers.
 
 As another idea, `autoware_auto_perception_msgs/msg/TrackedObject` is considered.
-However, radar drivers are desirable not to depend original message of Autoware for open source software.
+However, it is desireable for radar drivers to avoid dependence on Autoware messages for open source software.
 
-## survey for message
+## Survey for message
 
 ### ros-perception/radar_msgs/msg/RadarTracks.msg
 
