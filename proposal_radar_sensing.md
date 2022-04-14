@@ -1,7 +1,8 @@
 ## Summary
 
 I would like to initiate the discussion for sensing architecture with radars for Autoware.
-The target of this discussion is message definition and sensing pipeline for radars.
+The target of this discussion is the messaging systems used with radar sensors and sensing pipeline for radars.
+
 I would like to make a separate discussion for the perception architecture including radar.
 
 ### Messages
