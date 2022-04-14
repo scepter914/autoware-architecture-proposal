@@ -1,7 +1,9 @@
 
 ## Summary
 
-`ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarScan.msg`.
+This document contains a proposal for the messaging systems to be used with Radar sensors. Depending on the sensor manufacturer and its purpose, each sensor might exchange raw, post-processed data. This document introduces a survey about the previously developed messaging systems in the open-source community. It finally compares and selects a messaging type to create a unified messaging system to fit as many sensors as possible.
+
+In summary, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarScan.msg`.
 
 In addition, the following ideas:
 
@@ -14,8 +16,7 @@ I think following the ROS standard is better a architecture for open source soft
 
 ## Survey
 
-Although there are many kinds of outputs, radar mainly adopt two types as outputs; pointcloud, and objects.
-Related discussions in ros-perception are [PR #1](https://github.com/ros-perception/radar_msgs/pull/1), [PR #2](https://github.com/ros-perception/radar_msgs/pull/2), and [PR #3](https://github.com/ros-perception/radar_msgs/pull/3). Existing open source software for radar are summarized in these PR.
+Although there are many kinds of outputs, radar mainly adopt two types as outputs; pointcloud, and objects.  Related discussions in ros-perception are [PR #1](https://github.com/ros-perception/radar_msgs/pull/1), [PR #2](https://github.com/ros-perception/radar_msgs/pull/2), and [PR #3](https://github.com/ros-perception/radar_msgs/pull/3). Existing open source software for radar are summarized in these PR.
 
 ### ros-perception/radar_msgs/msg/RadarScan.msg
 
