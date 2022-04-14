@@ -28,7 +28,7 @@ As discussed in [Perception architecture discussion](https://github.com/autoware
 
 The tracked radar objects have the following features and can use for fusion tracking:
 
-- Far (> 100m) object recognition
+- Far object recognition
 - More precise twist information estimated by doppler velocity
 - Low accuracy of position and size information
 
