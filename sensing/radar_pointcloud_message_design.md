@@ -3,7 +3,7 @@
 
 This document contains a proposal for the messaging systems to be used with Radar sensors. Depending on the sensor manufacturer and its purpose, each sensor might exchange raw, post-processed data. This document introduces a survey about the previously developed messaging systems in the open-source community. It finally compares and selects a messaging type to create a unified messaging system to fit as many sensors as possible.
 
-In summary, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarScan.msg`.
+In summary, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format, so we suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarScan.msg`.
 
 In addition, the following ideas:
 
@@ -12,7 +12,7 @@ In addition, the following ideas:
 
 are considered.
 Compared with these, `ros-perception/radar_msgs/msg/RadarScan.msg` aims to standardize the radar raw data format as discussed in [PR #1](https://github.com/ros-perception/radar_msgs/pull/1).
-I think following the ROS standard is better a architecture for open source software.
+we think following the ROS standard is better a architecture for open source software.
 
 ## Survey
 
