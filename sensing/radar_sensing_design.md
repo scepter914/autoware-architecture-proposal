@@ -12,7 +12,7 @@ This figure can be found at <https://github.com/scepter914/autoware-radar-archit
 ### preprocess node
 
 The radar preprocess node uses the `ros-perception/radar_msgs/msg/RadarScan.msg`  message type.
-As a first prototype of radar preprocess, I suggest
+As a first prototype of radar preprocess, we suggest
 
 - Radar threshold filter
   - This package removes noise (low intensity and edge angle of sensors) from radar points.
@@ -21,7 +21,7 @@ As a first prototype of radar preprocess, I suggest
 
 ### RadarScan to Pointcloud2
 
-For convenient use of radar pointclouds within existing LiDAR packages, I suggest a `radar_scan_to_pointcloud2_convertor` package for conversion from `ros-perception/radar_msgs/msg/RadarScan.msg` to `sensor_msgs/msg/Pointcloud2.msg`.
+For convenient use of radar pointclouds within existing LiDAR packages, we suggest a `radar_scan_to_pointcloud2_convertor` package for conversion from `ros-perception/radar_msgs/msg/RadarScan.msg` to `sensor_msgs/msg/Pointcloud2.msg`.
 
 |            |           LiDAR package           |                 Radar package                 |
 | :--------: | :-------------------------------: | :-------------------------------------------: |
