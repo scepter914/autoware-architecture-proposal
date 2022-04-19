@@ -1,7 +1,7 @@
 
 ## Summary
 
-`ros-perception/radar_msgs/msg/RadarTrack.msg` aims to standardize the tracked object data from radar, so I suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarTrack.msg` as the radar object message type output by radar drivers.
+`ros-perception/radar_msgs/msg/RadarTrack.msg` aims to standardize the tracked object data from radar, so we suggest that Autoware adopts `ros-perception/radar_msgs/msg/RadarTrack.msg` as the radar object message type output by radar drivers.
 
 [Previous discussions](https://github.com/ros-perception/radar_msgs/pull/3) concluded that this message type fits multiple radars because, it stores uuid of an object, position, linear and angular velocity, and each covariance.
 
