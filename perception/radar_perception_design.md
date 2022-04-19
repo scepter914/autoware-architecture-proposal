@@ -10,7 +10,7 @@ This figure can be found at <https://github.com/scepter914/autoware-radar-archit
 Considering typical radar output types, we suggest two sensor fusion types in the perception module:
 
 - Radar fusion in the object layer in the tracking module
-- Radar fusion in the `RadarScan` layer in the detection module
+- Radar fusion in the `ros-perception/radar_msgs/msg/RadarScan.msg` layer in the detection module
 
 ## Radar fusion in object layer in tracking module
 
@@ -48,7 +48,7 @@ Radars which can output tracked objects offer the potential to make the sensor f
 Radars sensors that output raw input can adapt their drivers to publish `ros-perception/radar_msgs/msg/RadarScan`.
 In this way, the clustering and tracking modules can be used to integrate these types of sensors in the fusion tracking module.
 
-## Sensor fusion with `RadarScan` in detection module
+## Sensor fusion with `ros-perception/radar_msgs/msg/RadarScan.msg` in detection module
 
 In addition to Camera-LiDAR sensor fusion in the detection layer proposed in [Perception architecture discussion](https://github.com/autowarefoundation/autoware/discussions/3), this document proposes including radar in the detection layer.
 
@@ -66,9 +66,9 @@ Detected 2D and 3D objects are fused in the Camera-LiDAR Fusion module using met
 - Radar fusion
 
 The second stage is radar fusion.
-After Camera-LiDAR fusion, detected 3D objects from Camera-LiDAR fusion and  `RadarScan` are fused in radar fusion modules.
+After Camera-LiDAR fusion, detected 3D objects from Camera-LiDAR fusion and  `ros-perception/radar_msgs/msg/RadarScan.msg` are fused in radar fusion modules.
 
-Radar fusion packages aim to improve detection performance using detected 3D objects with low confidence and `RadarScan`.
-Radar fusion packages attach doppler velocity from `RadarScan` for detected 3D objects to improve velocity estimation in the tracking module.
+Radar fusion packages aim to improve detection performance using detected 3D objects with low confidence and `ros-perception/radar_msgs/msg/RadarScan.msg`.
+Radar fusion packages attach doppler velocity from `ros-perception/radar_msgs/msg/RadarScan.msg` for detected 3D objects to improve velocity estimation in the tracking module.
 
 By defining `DetectedObjects` as the input interface for camera and LiDAR data, it can improve usability for sensor fusion architecture; for example, the radar fusion module can be applied to the camera 3D detection.
