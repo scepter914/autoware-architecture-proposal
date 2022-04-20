@@ -5,7 +5,7 @@
 
 [Previous discussions](https://github.com/ros-perception/radar_msgs/pull/3) concluded that this message type fits multiple radars because, it stores uuid of an object, position, linear and angular velocity, and each covariance.
 
-As another idea, `autoware_auto_perception_msgs/msg/TrackedObject` is considered.
+As another idea, `autoware_auto_perception_msgs/msg/TrackedObject.msg` is considered.
 However, it is desireable for radar drivers to avoid dependence on Autoware messages for open source software.
 
 ## Survey for message
