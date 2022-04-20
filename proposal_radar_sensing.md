@@ -10,7 +10,7 @@ We would like to make a separate discussion for the perception architecture incl
 To summarize, We suggest
 
 - [ros-perception/radar_msgs/msg/RadarScan.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarScan.msg) for radar pointcloud.
-- [radar_msgs/msg/RadarTracks.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarTracks.msg) for radar object.
+- [ros-perception/radar_msgs/msg/RadarTracks.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarTracks.msg) for radar object.
 
 For more detail, please see [radar pointcloud message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/sensing/radar_pointcloud_message_design.md) and [radar object message design](https://github.com/scepter914/autoware-radar-architecture-proposal/blob/main/perception/radar_object_message_design.md).
 
