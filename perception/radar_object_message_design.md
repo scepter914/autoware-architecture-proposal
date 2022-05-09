@@ -8,6 +8,24 @@
 As another idea, `autoware_auto_perception_msgs/msg/TrackedObject.msg` is considered.
 However, it is desireable for radar drivers to avoid dependence on Autoware messages for open source software.
 
+## Message usage for RadarTracks
+
+- Object classifications
+
+For object classifications [radar_msgs/msg/RadarTrack.msg](https://github.com/ros-perception/radar_msgs/blob/ros2/msg/RadarTrack.msg), additional vendor-specific classifications are permitted starting from 32000.
+In addition to this, considering [existing label definition](https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_perception_msgs/msg/ObjectClassification.idl), Autoware define object classifications as below.
+
+```
+uint16 UNKNOWN = 32000;
+uint16 CAR = 32001;
+uint16 TRUCK = 32002;
+uint16 BUS = 32003;
+uint16 TRAILER = 32004;
+uint16 MOTORCYCLE = 32005;
+uint16 BICYCLE = 32006;
+uint16 PEDESTRIAN = 32007;
+```
+
 ## Survey for message
 
 ### ros-perception/radar_msgs/msg/RadarTracks.msg
