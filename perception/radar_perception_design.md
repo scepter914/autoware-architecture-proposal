@@ -72,3 +72,11 @@ Radar fusion packages aim to improve detection performance using detected 3D obj
 Radar fusion packages attach doppler velocity from `ros-perception/radar_msgs/msg/RadarScan.msg` for detected 3D objects to improve velocity estimation in the tracking module.
 
 By defining `DetectedObjects` as the input interface for camera and LiDAR data, it can improve usability for sensor fusion architecture; for example, the radar fusion module can be applied to the camera 3D detection.
+
+### Customize own radar interface
+
+The perception interface of Autoware is defined to `DetectedObjects`, `TrackedObjects`, and `PredictedObjects`, however, other message is defined by own cases. For example, [DetectedObjectWithFeature](https://github.com/tier4/tier4_autoware_msgs/tree/tier4/universe/tier4_perception_msgs/msg/object_recognition) is used by customized message in perception module.
+
+Same as that, you can adjust new radar interface.
+For example, `RadarTrack` doesn't have orientation information [from past discussions](https://github.com/ros-perception/radar_msgs/pull/3), especially [this discussion](https://github.com/ros-perception/radar_msgs/pull/3#issuecomment-661599741).
+If you want orientation information, you can adapt radar ROS driver to publish directly to `TrackedObject`.
