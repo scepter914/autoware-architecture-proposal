@@ -11,6 +11,7 @@ This proposal aims to simplify the perception pipeline, addressing the challenge
 
 ### Priority Object Merger
 
+
 **Priority Object Merger** introduces new features compared to the existing [object_merger](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger).
 
 Key features is following.
@@ -28,7 +29,7 @@ Additionally, if some detections fail, the merger fails to combine the results, 
 
 The `Priority Object Merger` eliminates the message filter and uses a priority-based approach for the main detection.
 When subscribing to the output of the main detection, it gathers all outputs from the detection pipeline.
-If a secondary detection fails, it can still merge results from other detections, improving the system’s overall reliability and availability.
+It gathers outputs from all detections, ensuring that even if a secondary detection fails, results from other detections can still be merged, improving overall reliability and availability.
 
 ### Base 3D Detection
 
@@ -39,25 +40,25 @@ Available methods include:
 - [TransFusion-L](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_lidar_transfusion)
 - BEVFusion-L (TBD)
 
-The detection range for `Base 3D Detection` typically falls between 90m and 120m, depending on the case.
+The detection range for `Base 3D Detection` typically falls between 90m and 120m, depending on the specific case.
 
-If you wish to use Camera-LiDAR fusion, you can integrate models like BEVFusion-CL (Camera-LiDAR fusion model).
-However, `Base 3D Detection` needs stable performance, as it is a critical component for the new architecture.
-Therefore, if sensor data drops frequently, we do not recommend using Camera-LiDAR fusion methods.
+If you wish to use Camera-LiDAR fusion, models like BEVFusion-CL (Camera-LiDAR fusion model) can be integrated.
+However, since `Base 3D Detection` is a critical component of the new architecture, stable performance is essential.
+Therefore, we do not recommend using Camera-LiDAR fusion methods in environments where sensor data frequently drops.
 
 ### Near-Object 3D Detection
 
 To enhance detection of nearby objects, especially pedestrians and cyclists, we have introduced **Near-Object 3D Detection**.
-This can serve as a supplementary detection method alongside the `Base 3D Detection`.
+This can serve as a supplementary detection method alongside `Base 3D Detection`.
 
 We primarily use ML-based methods like CenterPoint for near-object detection, which excels at detecting small objects.
-We apply higher-resolution voxel grids in the ML model to improve detection accuracy for small objects.
+By applying higher-resolution voxel grids in the ML model, we improve detection accuracy for small objects.
 The detection range typically falls between 30m and 50m.
 
 ### Camera-Only 3D Detection
 
 To improve detection of objects that LiDAR-based methods struggle with, we have introduced **Camera-Only 3D Detection**.
-We apply threshold with high confidence to suppress the bad influence of false positive.
+We apply a high-confidence threshold to suppress the impact of false positives.
 
 ### Radar-Only Faraway Object 3D Detection
 
@@ -66,19 +67,19 @@ For more details, see [the document on faraway radar object detection](https://g
 
 ### Cluster-Based Camera-LiDAR Fusion 3D Detection
 
-To improve detection of objects that LiDAR-based methods struggle to detect, we also offer **Cluster-Based Camera-LiDAR Fusion 3D Detection**.
+To improve detection of objects that LiDAR-based methods struggle to detect, we offer **Cluster-Based Camera-LiDAR Fusion 3D Detection**.
 This fusion process combines non-ground LiDAR point clouds (filtered by ground segmentation) with the results of 2D detection or semantic segmentation.
-This can be used as supplementary detection alongside Base 3D Detection.
+This can be used as supplementary detection alongside `Base 3D Detection`.
 
 However, as the data from point clouds and images increase, the processing time also increases.
 Therefore, we recommend avoiding this pipeline in situations where processing time is critical.
 
 ### 3D Semantic Segmentation
 
-To improve detection of objects that are difficult to detect using traditional 3D detection methods, especially vegetation, we have implemented **3D Semantic Segmentation**.
-It serves the non-ground pointcloud and labeled pointcloud for dynamic objects and vegetation.
+To improve detection of objects that are difficult to detect using traditional 3D detection methods—especially vegetation—we have implemented **3D Semantic Segmentation**.
+`3D Semantic Segmentation` provides non-ground point clouds and labels dynamic objects and vegetation.
 
-To adapt with the Autoware interface, we use a clustering method for processing 3D segmentation outputs.
+To integrate with the Autoware interface, we use a clustering method for processing 3D segmentation outputs.
 
 ### Multi-Object Tracking
 
@@ -87,8 +88,8 @@ The **Multi-Object Tracking** algorithm is illustrated below:
 ![Multi-Object Tracking](fig/multi_object_tracking.drawio.svg)
 
 The base algorithm is [multi_object_tracker](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_multi_object_tracker).
-As the input data volume increases, the processing time also increases.
-To optimize this, we reduce computational cost by incorporating stationary object detection.
+As input data volume increases, processing time also increases.
+To optimize performance, we reduce computational cost by incorporating stationary object detection.
 
 ### Motion Prediction
 
@@ -102,7 +103,7 @@ Available algorithms include:
 - MTR (TBD)
 - SIMPE (TBD)
 
-As with multi-object tracking, the processing time increases with the volume of input data.
+As with multi-object tracking, the processing time increases with input data volume.
 To mitigate this, we reduce computational cost by incorporating stationary object detection.
 
 ## Development Roadmap
