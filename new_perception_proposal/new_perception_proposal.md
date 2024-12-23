@@ -11,7 +11,6 @@ This proposal aims to simplify the perception pipeline, addressing the challenge
 
 ### Priority Object Merger
 
-
 **Priority Object Merger** introduces new features compared to the existing [object_merger](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger).
 
 Key features is following.

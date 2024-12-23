@@ -1,4 +1,7 @@
 # autoware-radar-architecture-proposal
+
+This repository is proposal draft for Autoware architecture.
+
 ## New perception proposal
 
 - [New perception pipeline proposal](/new_perception_proposal/new_perception_proposal.md)

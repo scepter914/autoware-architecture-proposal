@@ -1,5 +1,3 @@
-
-
 ## Radar driver
 
 ### Output
