@@ -1,4 +1,4 @@
-# autoware-radar-architecture-proposal
+# autoware-architecture-proposal
 
 This repository is proposal draft for Autoware architecture.
 
