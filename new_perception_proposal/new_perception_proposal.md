@@ -42,6 +42,11 @@ As optional method for detection to improve detection of objects that LiDAR-base
 `Camera-Only 3D detection` aims to solve the cases that are difficult to detect with LiDAR-based methods.
 For example, `Camera-Only 3D detection` will deal with detection of objects with tree occlusion and long-distance recognition.
 
+Available methods include:
+
+- StreamPETR (TBD)
+- Far3D (TBD)
+
 Note that we apply a high-confidence threshold to suppress the impact of false positives in `Camera-Only 3D Detection`.
 
 ### Radar-Only Faraway Object 3D Detection
@@ -101,7 +106,6 @@ It gathers outputs from all detections, ensuring that even if a secondary detect
 As input data volume increases, processing time also increases.
 To optimize performance, we reduce computational cost by incorporating stationary object detection.
 
-
 ### Motion Prediction
 
 The **Motion Prediction** algorithm is illustrated below:
@@ -112,7 +116,7 @@ Available algorithms include:
 
 - [Map-Based Prediction](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_map_based_prediction)
 - MTR (TBD)
-- SIMPE (TBD)
+- SIMPL (TBD)
 
 As with multi-object tracking, the processing time increases with input data volume.
 To mitigate this, we reduce computational cost by incorporating stationary object detection.
