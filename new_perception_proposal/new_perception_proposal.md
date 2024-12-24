@@ -1,6 +1,6 @@
 ## Summary
 
-This proposal aims to merge for [reference implementation of perception module in Autoware](https://github.com/autowarefoundation/autoware-documentation/blob/main/docs/design/autoware-architecture/perception/reference_implementation.md).
+This proposal aims to merge [the reference implementation of perception module in Autoware](https://github.com/autowarefoundation/autoware-documentation/blob/main/docs/design/autoware-architecture/perception/reference_implementation.md).
 
 The perception module pipeline in Autoware has grown increasingly complex due to the addition of numerous functions over time.
 This complexity has made it difficult to tune many parameters and debug, especially for rule-based complicated pipelines.
@@ -21,9 +21,9 @@ Available methods include:
 - [Apollo instance segmentation](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_lidar_apollo_instance_segmentation) + [shape estimation](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_shape_estimation)
 
 The detection range for `Base 3D Detection` typically falls between 90m and 120m, depending on the specific case.
-Note that we will delete `obstacle_pointcloud_based_validator` in new architecture because the computational cost is high and its effect is low.
+Note that we will remove `obstacle_pointcloud_based_validator` in new architecture because the computational cost is high and its effect is low.
 
-If you wish to use Camera-LiDAR fusion, models like BEVFusion-CL (Camera-LiDAR fusion model) can be integrated.
+If you wish to use Camera-LiDAR fusion, models like BEVFusion-CL (the model of Camera-LiDAR fusion) can be integrated.
 However, since `Base 3D Detection` is a critical component of the new architecture, stable performance is essential.
 Therefore, we do not recommend using Camera-LiDAR fusion methods in environments where sensor data frequently drops.
 
@@ -42,7 +42,7 @@ As optional method for detection to improve detection of objects that LiDAR-base
 `Camera-Only 3D detection` aims to solve the cases that are difficult to detect with LiDAR-based methods.
 For example, `Camera-Only 3D detection` will deal with detection of objects with tree occlusion and long-distance recognition.
 
-Note that we apply a high-confidence threshold to suppress the impact of false positives.
+Note that we apply a high-confidence threshold to suppress the impact of false positives in `Camera-Only 3D Detection`.
 
 ### Radar-Only Faraway Object 3D Detection
 
@@ -58,7 +58,7 @@ To integrate with the Autoware interface, we use a euclidean clustering method f
 
 ### Cluster-Based 3D Detection
 
-To improve detection of objects that LiDAR-based methods struggle to detect, we offer **Cluster-Based 3D Detection**.
+To enhance detection of objects that LiDAR-based methods may struggle with, we offer **Cluster-Based 3D Detection**.
 `Cluster-Based 3D Detection` consists of many nodes, and the pipeline shows as following.
 
 ![](images/clustering_based_detection.drawio.svg)
@@ -76,7 +76,7 @@ Therefore, we recommend avoiding this pipeline in situations where processing ti
 
 ![](images/multi_object_tracking.drawio.svg)
 
-Key features is following.
+The key features are as follows.
 
 - **Priority Object Merger**
 
@@ -123,7 +123,7 @@ To mitigate this, we reduce computational cost by incorporating stationary objec
   - Implement Priority Object Merger
   - Add stationary detection
 - [ ] Develop a new model for Near-Object 3D Detection
-- [ ] Create Camera-Only 3D Detection package
+- [ ] Develop Camera-Only 3D Detection package
 - [ ] Develop 3D Semantic Segmentation package
 - [ ] Implement clustering method for 3D Semantic Segmentation output
 - [ ] Update perception launcher for detection integration
