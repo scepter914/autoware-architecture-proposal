@@ -1,34 +1,14 @@
 ## Summary
 
+This proposal aims to merge for [reference implementation of perception module in Autoware](https://github.com/autowarefoundation/autoware-documentation/blob/main/docs/design/autoware-architecture/perception/reference_implementation.md).
+
 The perception module pipeline in Autoware has grown increasingly complex due to the addition of numerous functions over time.
 This complexity has made it difficult to tune many parameters and debug, especially for rule-based complicated pipelines.
-
 This proposal aims to simplify the perception pipeline, addressing the challenges of tuning and debugging.
 
 ## Overall Pipeline for Object Recognition
 
 ![Overall Pipeline](fig/new_autoware_design.drawio.svg)
-
-### Priority Object Merger
-
-**Priority Object Merger** introduces new features compared to the existing [object_merger](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger).
-
-Key features is following.
-
-- **Multiple Inputs**
-
-`Priority Object Merger` can handle multiple inputs by 1 node, reducing the need for multiple `object_merger` nodes.
-It leads to be easy to debug.
-
-- **Merge with Priority**
-
-The existing `object_merger` uses approximate synchronization via message filters, introducing time delays.
-As the amount of input data increases, which makes the delay, impacting the availability of autonomous driving.
-Additionally, if some detections fail, the merger fails to combine the results, reducing availability.
-
-The `Priority Object Merger` eliminates the message filter and uses a priority-based approach for the main detection.
-When subscribing to the output of the main detection, it gathers all outputs from the detection pipeline.
-It gathers outputs from all detections, ensuring that even if a secondary detection fails, results from other detections can still be merged, improving overall reliability and availability.
 
 ### Base 3D Detection
 
@@ -57,7 +37,10 @@ The detection range typically falls between 30m and 50m.
 ### Camera-Only 3D Detection
 
 To improve detection of objects that LiDAR-based methods struggle with, we have introduced **Camera-Only 3D Detection**.
-We apply a high-confidence threshold to suppress the impact of false positives.
+`Camera-Only 3D detection` aims to solve the cases that are difficult to detect with LiDAR-based methods.
+For example, `Camera-Only 3D detection` will deal with detection of objects with tree occlusion and long-distance recognition.
+
+Note that we apply a high-confidence threshold to suppress the impact of false positives.
 
 ### Radar-Only Faraway Object 3D Detection
 
@@ -67,28 +50,50 @@ For more details, see [the document on faraway radar object detection](https://g
 ### Cluster-Based Camera-LiDAR Fusion 3D Detection
 
 To improve detection of objects that LiDAR-based methods struggle to detect, we offer **Cluster-Based Camera-LiDAR Fusion 3D Detection**.
-This fusion process combines non-ground LiDAR point clouds (filtered by ground segmentation) with the results of 2D detection or semantic segmentation.
+This fusion process combines non-ground LiDAR point clouds (filtered by ground segmentation or 3D semantic segmentation) with the results of 2D detection or semantic segmentation.
 This can be used as supplementary detection alongside `Base 3D Detection`.
 
 However, as the data from point clouds and images increase, the processing time also increases.
-Therefore, we recommend avoiding this pipeline in situations where processing time is critical.
+Therefore, we recommend avoiding this pipeline in situations where processing time is critical or use for only narrow detection range.
 
 ### 3D Semantic Segmentation
 
-To improve detection of objects that are difficult to detect using traditional 3D detection methods—especially vegetation—we have implemented **3D Semantic Segmentation**.
-`3D Semantic Segmentation` provides non-ground point clouds and labels dynamic objects and vegetation.
+To improve detection of objects that are difficult to detect using traditional 3D detection methods, especially vegetation and traffic cone, we will implement **3D Semantic Segmentation**.
+`3D Semantic Segmentation` provides non-ground point clouds and labeled pointcloud for some objects and vegetation.
 
-To integrate with the Autoware interface, we use a clustering method for processing 3D segmentation outputs.
+To integrate with the Autoware interface, we use a euclidean clustering method for processing 3D segmentation outputs.
 
-### Multi-Object Tracking
+### Multi-Object Tracking v2
 
-The **Multi-Object Tracking** algorithm is illustrated below:
+**Multi-Object Tracking v2** is based on existing [multi_object_tracker](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_multi_object_tracker) and illustrated below:
 
-![Multi-Object Tracking](fig/multi_object_tracking.drawio.svg)
+![](fig/multi_object_tracking.drawio.svg)
 
-The base algorithm is [multi_object_tracker](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_multi_object_tracker).
+Key features is following.
+
+- **Priority Object Merger**
+
+`Priority Object Merger` introduces new features compared to the existing [object_merger](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger).
+`Priority Object Merger` can handle multiple inputs, reducing the need for multiple `object_merger` nodes.
+It leads to be easy to debug.
+
+The existing `object_merger` uses approximate synchronization via message filters, introducing time delays.
+As the amount of input data increases, which makes the delay, impacting the availability of autonomous driving.
+Additionally, if some detections fail, the merger fails to combine the results, reducing availability.
+
+![](fig/priority_merger_1.drawio.svg)
+
+The `Priority Object Merger` eliminates the message filter and uses a priority-based approach for the main detection.
+When subscribing to the output of the main detection, it gathers all outputs from the detection pipeline.
+It gathers outputs from all detections, ensuring that even if a secondary detection fails, results from other detections can still be merged, improving overall reliability and availability.
+
+![](fig/priority_merger_2.drawio.svg)
+
+- **Stationary detection**
+
 As input data volume increases, processing time also increases.
 To optimize performance, we reduce computational cost by incorporating stationary object detection.
+
 
 ### Motion Prediction
 
