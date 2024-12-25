@@ -59,6 +59,10 @@ For more details, see [the document on faraway radar object detection](https://g
 To improve detection of objects that are difficult to detect using traditional 3D detection methods, especially vegetation and traffic cone, we will implement **3D Semantic Segmentation**.
 `3D Semantic Segmentation` provides non-ground point clouds and labeled pointcloud for some objects and vegetation.
 
+Available methods include:
+
+- FRNet (TBD)
+
 To integrate with the Autoware interface, we use a euclidean clustering method for processing 3D segmentation outputs.
 
 ### Cluster-Based 3D Detection
@@ -123,12 +127,21 @@ To mitigate this, we reduce computational cost by incorporating stationary objec
 
 ## Development Roadmap
 
-- [ ] Implement `multi object tracking v2`
-  - Implement Priority Object Merger
-  - Add stationary detection
-- [ ] Develop a new model for Near-Object 3D Detection
-- [ ] Develop Camera-Only 3D Detection package
-- [ ] Develop 3D Semantic Segmentation package
-- [ ] Implement clustering method for 3D Semantic Segmentation output
-- [ ] Update perception launcher for detection integration
-- [ ] Add stationary object skipping in Motion Prediction
+- `multi object tracking v2`
+  - [ ] Implement Priority Object Merger
+  - [ ] Add stationary detection
+- Base 3D Detection
+  - [ ] Delete obstacle pointcloud validator
+- Near-Object 3D Detection
+  - [ ] Develop a new model
+- Camera-Only 3D Detection (Maybe StreamPETR)
+  - [ ] Release trained model
+  - [ ] Add ROS2 package
+- 3D semantic segmentation
+  - [ ] Train with concatenated pointcloud
+  - [ ] Develop FRNet ROS2 package
+  - [ ] Integrate with euclidean clustering
+- Motion prediction
+  - [ ] Add stationary object skipping
+- Launcher
+  - [ ] Update perception launcher for detection integration
